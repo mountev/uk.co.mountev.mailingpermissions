@@ -170,6 +170,10 @@ function mailingpermissions_civicrm_navigationMenu(&$menu) {
   _mailingpermissions_civix_navigationMenu($menu);
 }
 
+/**
+ * Implements hook_civicrm_selectWhereClause().
+ *
+ */
 function mailingpermissions_civicrm_selectWhereClause($entity, &$clauses) {
   $path = CRM_Utils_System::currentPath();
   if (($entity == 'Group') && ($path != 'civicrm/mailingpermissions/settings')) {
@@ -181,6 +185,10 @@ function mailingpermissions_civicrm_selectWhereClause($entity, &$clauses) {
   }
 }
 
+/**
+ * Implements hook_civicrm_alterResourceSettings().
+ *
+ */
 function mailingpermissions_civicrm_alterResourceSettings(&$event) {
   if (!empty($event['crmMailing']['fromAddress'])) {
     $contactId = CRM_Core_Session::singleton()->get('userID');

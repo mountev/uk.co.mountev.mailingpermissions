@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Utility class
+ * Mailingpermissions Utils Class
  *
  */
 class CRM_Mailingpermissions_Utils {

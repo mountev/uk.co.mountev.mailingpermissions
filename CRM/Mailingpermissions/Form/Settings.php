@@ -10,9 +10,18 @@ use CRM_Mailingpermissions_Utils as MP;
  */
 class CRM_Mailingpermissions_Form_Settings extends CRM_Core_Form {
 
-  public function buildQuickForm() {
+  /**
+   * Build all the data structures needed to build the form.
+   */
+  public function preProcess() {
     $this->assign('rowCount', MP::NO_OF_ROWS + 1);
 
+    CRM_Core_Resources::singleton()->addStyleFile('uk.co.mountev.mailingpermissions',  'css/spin.css', 10, 'html-header');
+    CRM_Core_Resources::singleton()->addScriptFile('uk.co.mountev.mailingpermissions', 'js/modernizr.js', 20, 'html-header', FALSE);
+    CRM_Core_Resources::singleton()->addScriptFile('uk.co.mountev.mailingpermissions', 'js/spinner.js', 500, 'html-header', FALSE);
+  }
+
+  public function buildQuickForm() {
     $group = ['' => ts('- select group -')] + CRM_Core_PseudoConstant::nestedGroup();
     $fromAddress = civicrm_api3('OptionValue', 'get', [
       'option_group_id' => "from_email_address",
