@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS civicrm_mailing_permissions;
 CREATE TABLE IF NOT EXISTS `civicrm_mailing_permissions` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'primary key',
   `user_group` int(10) unsigned NOT NULL COMMENT 'Logged in user group. FK to civicrm_group',
