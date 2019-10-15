@@ -2,14 +2,14 @@
 
 ![Screenshot](/images/screenshot.png)
 
-(*FIXME: In one or two paragraphs, describe what the extension does and why one would download it. *)
+Extension to restrict from-address and mailing recipient groups based on permissions configured. Extension will work even if "View/Edit All Conatcts" permission has been granted.
 
 The extension is licensed under [AGPL-3.0](LICENSE.txt).
 
 ## Requirements
 
 * PHP v5.6+
-* CiviCRM (*FIXME: Version number*)
+* CiviCRM v5.0+
 
 ## Installation (Web UI)
 
@@ -37,8 +37,7 @@ cv en mailingpermissions
 
 ## Usage
 
-(* FIXME: Where would a new user navigate to get started? What changes would they see? *)
-
-## Known Issues
-
-(* FIXME *)
+* Goto Administer > CiviMail >> Mailing Permissions.
+* Configure permissions.
+* Login with permissioned user.
+* Create new mailing (traditional). From address and recipients groups should be restricted as configured.
