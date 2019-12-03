@@ -26,6 +26,7 @@ class CRM_Mailingpermissions_Form_Settings extends CRM_Core_Form {
     $fromAddress = civicrm_api3('OptionValue', 'get', [
       'option_group_id' => "from_email_address",
       'domain_id' => CRM_Core_Config::domainID(),
+      'options' => ['limit' => 0],
     ]);
     $fromAddressList = [];
     if (!empty($fromAddress['values'])) {
