@@ -58,7 +58,7 @@ class CRM_Mailingpermissions_Utils {
     $to_groups = [];
     $from_address = [];
 
-    if (!array_key_exists($contactId, $result)) {
+    if ($contactId && !array_key_exists($contactId, $result)) {
       $result[$contactId] = [];
       $groups = CRM_Contact_BAO_GroupContact::getContactGroup($contactId, 'Added', NULL, FALSE, TRUE, FALSE, TRUE, NULL, TRUE);
       if (!empty($groups)) {
